@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        li{
+            /* list-style: none; */
+        }
+        #wrap{
+            display: flex;
+            width: 1000px;
+        }
+        #header{
+            width: 20%;
+            height: 650px;
+        }
+        .logo{
+            width: 100%;
+            height: 100px;
+            background-color: lightblue;
+        }
+        .nav{
+            width: 100%;
+            height: calc(100% - 100px);
+            background-color: lightgoldenrodyellow;
+        }
+        .nav > ul >li{
+            position: relative;
+            list-style: none;
+        }
+        .nav > ul > li > a{
+            display: inline-block;
+            background-color: lightcyan;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .nav > ul > li > ul{
+            position: absolute;
+            top:0px;
+            left: 200px;
+            width: 100%;
+            display: block;
+            transition: all 600ms;
+            overflow: hidden;
+            height: 0px;
+            z-index: 1;
+        }
+        .nav > ul > li > ul >li{
+            list-style: none;
+        }
+        .nav > ul > li > ul > li > a{
+            background-color: lightskyblue;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: all 200ms;
+        }
+        #main{
+            width: 80%;
+            height: 650px;
+        }
+        #slider{
+            width: 100%;
+            height: 350px;
+
+            overflow: hidden;
+        }
+        #slider > div > div{
+            position: relative;
+        }
+
+        #slider > div > div > div{
+            position: absolute;
+            left: 55%;
+            top:65%;
+            display: block;
+            width: 280px;
+            height: 80px;
+            background-color: rgba(0,0,0,0.5);
+            color: #ffff;
+            padding: 20px 20px 15px 30px;
+
+        }
+        #slider > div > div > div > h3{
+            font-size: 38px;
+            margin-top: 5px;
+        }
+        
+        #content{
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+
+        .content1{
+            width: 300px;
+            height: 200px;
+        }
+        .con1-1{
+            padding: 20px;
+            display: inline-block;
+            width: 70%;
+            overflow: hidden;
+        }
+        .con1-1 > ul > h3{
+            margin-bottom: 10px;
+        }
+        .con1-1 > ul > li{
+            margin-left: 15px;
+            padding-bottom:7px;
+            white-space:nowrap;
+        }
+        .content2{
+            width: 300px;
+            height: 200px;
+            background-color: lightskyblue;
+        }
+        .con1-2{
+            padding: 20px;
+        }
+        .con1-2 > div h3{
+            margin-bottom: 10px;
+        }
+        .con1-2 > div > 
+        .content3{
+            width: 200px;
+            height: 200px;
+            background-color: lightskyblue;
+        }
+        .con1-3{
+            width: 100%;
+        }
+        .con1-3 > div{
+
+        }
+        .con1-3 > div > h3{
+            font-size: 25px;
+            text-align: center;
+            padding-top: 25%;
+            width: 200px;
+        }
+        .con1-3 > div > a{
+            margin: auto;
+            width: 40%;
+            justify-content: center;
+            display: block;
+            background-color: lightyellow;
+            text-align: center;
+            padding: 10px 0 10px 0;
+        }
+        #footer{
+            width: 100%;
+            height: 100px;
+            background-color: lightsalmon;
+            display: flex;
+            align-items: center;
+        }
+        .footer1{
+            width: 30%;
+            height: 100%;
+        }
+        .footer1 > div > h3{
+            padding: 40px;
+            font-size: 20px;
+        }
+        .footer2{
+            width: 40%;
+            height: 100%;
+            padding-top: 60px;
+        }
+    
+        .pop{
+            position: absolute;
+            background-color: lightskyblue;
+            width: 18%;
+            top:15%;
+            left:17%;
+            height: 350px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="#">축제소개</a>
+                        <ul class="submenu">
+                            <li><a>fectival소개</a></li>
+                            <li><a>행사장안내</a></li>
+                            <li><a>조직위원회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">예약안내</a>
+                        <ul class="submenu">
+                            <li><a>예약하기</a></li>
+                            <li><a>예약확인/취소</a></li>
+                            <li><a>단체예약문의</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">아티스트</a>
+                        <ul class="submenu">
+                            <li><a href="#">고릴라즈</a></li>
+                            <li><a href="#">메이저 레이저</a></li>
+                            <li><a href="#">아우스게인</a></li>
+                            <li><a href="#">타임로드</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                        <ul class="submenu">
+                            <li><a>공지사항</a></li>
+                            <li><a>사진갤러리</a></li>
+                            <li><a>영상 갤러리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div id="slider">
+                <div class="slider_wrap">
+                    <div class="imgs1">
+                        <img style="width: 100%; height: 350px;" src="slider01.jpg">
+                        <div>
+                            <h3 >vakery festival</h3>
+
+                            <p>신나는 축제 같이 놀아봅시다</p>
+                        </div>
+                    </div>
+                    <div class="imgs1">
+                        <img style="width: 100%; height: 350px;" src="slider01.jpg">
+                        <div>
+                            <h3 >vakery festival</h3>
+
+                            <p>신나는 축제 같이 놀아봅시다</p>
+                        </div>
+                    </div>
+                    <div class="imgs1">
+                        <img style="width: 100%; height: 350px;" src="slider01.jpg">
+                        <div>
+                            <h3 >vakery festival</h3>
+
+                            <p>신나는 축제 같이 놀아봅시다</p>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div id="content">
+                <div class="content1">
+                    <div class="con1-1">
+                        <ul><h3>Vallery Festival 공지사항</h3>
+                            <li><a href="#">주차장 안내 및 테켓 수령 장소 주차장 안내 및 테켓 수령 장소</a>
+                            <li><a href="#">Vallery Festival 날짜 및 장소 안내</a></li>
+                            <li><a href="#">아티스트 라인 업 및 티켓팅 하는 방법</a></li>
+                            <li><a href="#">주의사항 및 안내사항 참고 필수</a></li>
+                            <li><a href="#">Vallery Festival 사이트 업데이트 안내</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="content2">
+                    <div class="con1-2">
+                        <div>
+                            <h3>Vallery Festival 갤러리</h3>
+                        </div>
+                        <div>
+                            <img>이미지1
+                            <img>이미지1
+                            <img>이미지1
+                        </div>
+                    </div>
+                </div>
+                <div class="content3">
+                    <div class="con1-3">
+                        <div>
+                            <h3>vallery festival</h3>
+                        </div>
+                        <div>
+                            <a href="#" class="pop_open">티켓 구매</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footer1">
+                    <div>
+                        <h3>vallery festival</h3>
+                    </div>
+                </div>
+                <div class="footer2">
+                    주소 서울시 강남구 삼성로 100 삼성동빌딩 100층<br>
+                    COPYRIGHT(C) ALL RIGHTS RESERVED.
+                </div>
+                <div class="footer3">
+                    <select name="select" id="select">
+                        <option value="패밀리 사이트">패밀리 사이트</option>
+                        <option value="패밀리 사이트1">패밀리 사이트1</option>
+                        <option value="패밀리 사이트2">패밀리 사이트2</option>
+                        <option value="패밀리 사이트3">패밀리 사이트3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="pop">
+            <span class="pop_close">닫기</span>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            let navlist = document.querySelectorAll(".nav > ul > li");
+
+            navlist.forEach(function(navitem){
+                navitem.addEventListener("mouseover",function(){
+
+                    navitem.querySelector(".submenu").style.height = "155px";
+                })           
+                navitem.addEventListener("mouseout",function(){
+
+                    navitem.querySelector(".submenu").style.height = "0px";
+                })     
+            })
+
+
+            let imgIndex = 0;
+            const imgList = document.querySelector(".slider_wrap");
+            const imgs = document.querySelectorAll(".imgs1");
+
+            imgList.appendChild(imgs[0].cloneNode(true));
+
+            setInterval(() => {
+                imgIndex++;
+                imgList.style.marginTop = -44.4 * imgIndex + "%";
+                imgList.style.transition = "all 0.6s";
+
+                if (imgIndex === imgs.length) {
+                    setTimeout(() => {
+                        imgList.style.transition = "all 0s";
+                        imgList.style.marginTop = "0";
+                        imgIndex = 0;
+                    }, 600);
+                }
+            }, 3000);
+
+            document.querySelector(".pop_open").addEventListener("click",function() {
+                document.querySelector(".pop").style.display = "block";
+            })
+            document.querySelector(".pop_close").addEventListener("click",function() {
+                document.querySelector(".pop").style.display = "none";
+            })
+        }       
+    </script>
+</body>
+</html>
